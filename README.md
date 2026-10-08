@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./public/images/sciencinnov_logo_white.png" alt="Sciencinnov logo" width="140" />
+<img src="./public/images/sciencinnov_logo_white.png" alt="Sciencinnov logo" width="180" />
 
 # Sciencinnov
 
-**A fast, responsive, right-to-left landing page for Sciencinnov Academy — a skill-based science & technology academy for kids and teenagers.**
+**A fast, responsive, right-to-left website for Sciencinnov Academy — a skill-based science & technology academy for kids and teenagers.**
 
 ![Next.js](https://img.shields.io/badge/Next.js-App_Router-000000?logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
@@ -15,11 +15,11 @@
 
 ## Overview
 
-Sciencinnov is a single-page marketing site built from a Figma design. It is **RTL-first** (Persian), fully responsive from phones to wide desktops, and focused on smooth, lightweight motion rather than heavy animation libraries.
+Sciencinnov is the website of Sciencinnov Academy, built from a Figma design. It starts with the home page, with dedicated course pages coming next. It is **RTL-first** (Persian), fully responsive from phones to wide desktops, and focused on smooth, lightweight motion rather than heavy animation libraries.
 
 ## Features
 
-**Sections**
+**Home page sections**
 
 - Responsive navbar with a slide-in sidebar on small screens and smooth-scroll anchors
 - Hero with a consultation call-to-action that opens a modal request form
