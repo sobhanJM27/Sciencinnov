@@ -7,7 +7,7 @@ import { TrustedBy } from "@/components/ui/trusted-by";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-2 items-center justify-center px-6 py-2">
+    <main className="flex flex-col gap-2 items-center justify-center px-6 py">
       <Hero />
       <Goals />
       <OurCourses />

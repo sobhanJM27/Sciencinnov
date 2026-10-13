@@ -3,15 +3,21 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { OurCourseCard } from "./our-course-card";
 import { cn } from "cn";
-import { sectionPaddingX, sectionSubtitle, sectionTitle } from "@/lib/style";
+import {
+  sectionPaddingX,
+  sectionPaddingY,
+  sectionSubtitle,
+  sectionTitle,
+} from "@/lib/style";
 
 export function OurCourses() {
   return (
     <section className="w-full">
       <div
         className={cn(
-          "mx-auto grid grid-cols-1 gap-12 py-10 lg:grid-cols-2 lg:items-center lg:gap-16",
+          "mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16",
           sectionPaddingX,
+          sectionPaddingY,
         )}
       >
         <div className="flex flex-col gap-10">
@@ -30,7 +36,7 @@ export function OurCourses() {
         </div>
         <div className="grid grid-cols-1 gap-x-20 gap-y-10 sm:grid-cols-2">
           {ourCourses.map((course, index) => (
-            <Reveal key={course.id} delay={index * 2 * 200} className="h-full">
+            <Reveal key={course.id} delay={index * 2 * 150} className="h-full">
               <OurCourseCard course={course} />
             </Reveal>
           ))}

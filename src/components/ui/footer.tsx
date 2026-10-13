@@ -8,7 +8,7 @@ export function Footer() {
       <div className="bg-brand-blue-active">
         <div className="flex flex-col gap-12 px-4 py-12 sm:px-6 md:gap-14 md:px-8 md:py-16 lg:px-36">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-start">
-            <div className="flex w-fit flex-col gap-8 md:mx-0">
+            <div className="flex w-full flex-col gap-8 md:mx-0">
               <Image
                 src="/images/logo-blue.png"
                 alt="Sciencinnov"
@@ -16,24 +16,46 @@ export function Footer() {
                 height={140}
                 className="h-auto w-32 self-center md:w-36"
               />
-              <ul className="flex flex-col gap-5 text-brand-surface-dark/80">
+
+              <ul className="flex flex-col gap-6 text-brand-surface-dark/80">
                 {contactInfo.map((item) => {
+                  const isBranch = [
+                    "mashhad-1",
+                    "mashhad-2",
+                    "tehran",
+                  ].includes(item.id);
+
+                  const branchTitle = {
+                    "mashhad-1": "شعبه اول مشهد",
+                    "mashhad-2": "شعبه دوم مشهد",
+                    tehran: "شعبه تهران",
+                  }[item.id];
+
                   const content = (
-                    <>
+                    <div className="flex items-start gap-4">
                       <Image
                         src={item.icon}
                         alt=""
                         width={33}
                         height={33}
-                        className="size-6 shrink-0 object-contain"
+                        className="mt-1 size-6 shrink-0 object-contain"
                       />
-                      <span
-                        dir={item.id === "email" ? "ltr" : undefined}
-                        className="text-sm"
-                      >
-                        {item.text}
-                      </span>
-                    </>
+
+                      <div className="flex flex-col gap-1">
+                        {isBranch && (
+                          <span className="font-bold text-brand-surface-dark">
+                            {branchTitle}
+                          </span>
+                        )}
+
+                        <span
+                          dir={item.id === "email" ? "ltr" : undefined}
+                          className="text-sm leading-7"
+                        >
+                          {item.text}
+                        </span>
+                      </div>
+                    </div>
                   );
 
                   return (
@@ -41,12 +63,12 @@ export function Footer() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="flex items-center gap-6 transition-opacity hover:opacity-60 duration-300"
+                          className="transition-opacity duration-300 hover:opacity-60"
                         >
                           {content}
                         </a>
                       ) : (
-                        <div className="flex items-center gap-6">{content}</div>
+                        content
                       )}
                     </li>
                   );
@@ -88,7 +110,7 @@ export function Footer() {
 
       <div className="bg-brand-green-light">
         <p className="max-w-7xl px-4 py-3 text-sm sm:px-6 md:px-8 lg:px-16 text-brand-surface-dark">
-          © آکادمی ساینسینو ۱۴۰۶
+          © آکادمی ساینسینو ۱۴۰۵
         </p>
       </div>
     </footer>

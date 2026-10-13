@@ -2,15 +2,16 @@ import Image from "next/image";
 import { Reveal, RevealSide } from "@/components/reveal";
 import { ConsultationPopup } from "../consultation-popup";
 import { cn } from "cn";
-import { sectionPaddingX } from "@/lib/style";
+import { sectionPaddingX, sectionPaddingY } from "@/lib/style";
 
 export function Hero() {
   return (
     <section className="w-full">
       <div
         className={cn(
-          "flex mx-auto flex-col gap-10 py-10 tablet:flex-row lg:gap-16 md:pt-16 md:pb-10",
+          "flex mx-auto flex-col gap-10 tablet:flex-row lg:gap-16 md:pt-16 md:pb-10",
           sectionPaddingX,
+          sectionPaddingY,
         )}
       >
         <div className="flex min-w-0 flex-col gap-6 md:justify-between">

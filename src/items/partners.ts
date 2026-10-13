@@ -31,4 +31,9 @@ export const partners = [
     name: "Innovation Center for Data Science",
     logo: "/images/data-science.png",
   },
+  {
+    id: uuidv4(),
+    name: "موسسه تحقیقات ریاضی دکتر مصاحب",
+    logo: "/images/mosaheb.png",
+  },
 ];

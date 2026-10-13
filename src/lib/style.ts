@@ -1,4 +1,5 @@
 export const sectionPaddingX = "px-4 sm:px-6 md:px-8 lg:px-10";
+export const sectionPaddingY = "py-10 md:py-16"
 
 export const sectionTitle =
   "text-2xl font-extrabold text-brand-black lg:text-3xl";

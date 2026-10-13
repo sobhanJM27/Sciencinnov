@@ -2,7 +2,7 @@ import { StatCounter } from "@/components/ui/stat-counter";
 import { stats } from "@/items/stats";
 import { GalleryImage } from "./gallery-image";
 import { cn } from "@/lib/utils";
-import { sectionPaddingX, sectionTitle } from "@/lib/style";
+import { sectionPaddingX, sectionPaddingY, sectionTitle } from "@/lib/style";
 
 const experiences = [
   "/images/experience-1.png",
@@ -18,7 +18,9 @@ const experiences = [
 export function OurExperience() {
   return (
     <section id="experience" className="w-full">
-      <div className={cn("flex flex-col gap-10 py-10", sectionPaddingX)}>
+      <div
+        className={cn("flex flex-col gap-10", sectionPaddingX, sectionPaddingY)}
+      >
         <h2 className={sectionTitle}>تجربه‌ی ساینسینو</h2>
         <div className="grid grid-cols-3 gap-4 sm:gap-1">
           {stats.map((stat, index) => (

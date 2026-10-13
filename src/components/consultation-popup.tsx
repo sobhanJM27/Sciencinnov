@@ -2,18 +2,42 @@
 
 import { useId, useState, type FormEvent } from "react";
 import { X } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogClose, DialogContent, DialogTitle } from "./ui/dialog";
 import { popupFields } from "@/items/popup-items";
+import { sendConsultation } from "@/lib/send-consultation";
 
 export function ConsultationPopup() {
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const formId = useId();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setOpen(false);
+    const data = new FormData(event.currentTarget);
+
+    setIsSubmitting(true);
+    try {
+      await sendConsultation({
+        fullName: String(data.get("fullName") ?? ""),
+        age: String(data.get("age") ?? ""),
+        phone: String(data.get("phone") ?? ""),
+        source: "popup",
+      });
+      toast.success("درخواست شما ثبت شد", {
+        description: "به‌زودی همکاران ما با شما تماس می‌گیرند.",
+      });
+      setOpen(false);
+    } catch (error) {
+      toast.error("ارسال درخواست انجام نشد", {
+        description:
+          error instanceof Error ? error.message : "لطفاً دوباره تلاش کنید.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -64,8 +88,12 @@ export function ConsultationPopup() {
               })}
             </div>
 
-            <Button type="submit" className="self-start">
-              با من تماس بگیرید!
+            <Button
+              type="submit"
+              className="self-start"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "در حال ارسال..." : "دریافت مشاوره"}
             </Button>
           </form>
         </DialogContent>

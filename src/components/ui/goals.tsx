@@ -6,7 +6,7 @@ import { cn } from "cn";
 
 export function Goals() {
   return (
-    <section className="w-full bg-brand-blue-active rounded-[62px]">
+    <section className="w-full bg-brand-blue-active rounded-[62px] my-10 md:my-16">
       <div
         className={cn(
           "grid grid-cols-1 gap-10 py-14 md:grid-cols-2 md:gap-x-10 md:py-16 lg:grid-cols-4 lg:gap-14 lg:py-20",
@@ -24,7 +24,7 @@ export function Goals() {
         {goals.map((feature, index) => (
           <Reveal
             key={feature.id}
-            delay={(index + 1) * 200}
+            delay={(index + 1) * 150}
             className="flex flex-col gap-4 lg:border-s-2 lg:border-brand-blue lg:ps-8"
           >
             <div className="relative h-12 w-12 shrink-0">

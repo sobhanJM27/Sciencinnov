@@ -2,22 +2,27 @@ import Image from "next/image";
 import { Carousel } from "@/components/ui/carousel";
 import { instructors } from "@/items/instructors";
 import { Reveal } from "../reveal";
-import { sectionPaddingX, sectionSubtitle, sectionTitle } from "@/lib/style";
+import {
+  sectionPaddingX,
+  sectionPaddingY,
+  sectionSubtitle,
+  sectionTitle,
+} from "@/lib/style";
 import { cn } from "cn";
 
 export function OurInstructors() {
   return (
     <section id="instructors" className="w-full">
-      <div className={cn("flex flex-col gap-10 py-10", sectionPaddingX)}>
+      <div
+        className={cn("flex flex-col gap-10", sectionPaddingX, sectionPaddingY)}
+      >
         <div className="flex flex-col gap-2">
-          <h2 className={sectionTitle}>
-            مدرسان ساینسینو
-          </h2>
+          <h2 className={sectionTitle}>مدرسان ساینسینو</h2>
           <p className={sectionSubtitle}>
             همراهان شما در مسیر شکوفایی فرزندتان
           </p>
         </div>
-        <Reveal delay={180}>
+        <Reveal delay={150}>
           <Carousel>
             {instructors.map((instructor) => (
               <div

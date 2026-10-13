@@ -14,11 +14,11 @@ export const navTabs = [
     {
         id: uuidv4(),
         title: "مدرسان",
-        href: "#instructors",
+        href: "/#instructors",
     },
     {
         id: uuidv4(),
         title: "تجربه",
-        href: "#experience",
+        href: "/#experience",
     },
 ]

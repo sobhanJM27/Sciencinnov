@@ -2,9 +2,21 @@ import { v4 as uuidv4 } from "uuid";
 
 export const contactInfo = [
   {
-    id: uuidv4(),
+    id: "mashhad-1",
     icon: "/images/address.png",
-    text: "بلوار احمدآباد، بلوار رضا، خیابان رضا ۳۱، موسسه ساینسینو",
+    text: "مشهد، احمدآباد، رضا ۳۱، پلاک ۱۴.۱، طبقه دوم",
+    href: undefined,
+  },
+  {
+    id: "mashhad-2",
+    icon: "/images/address.png",
+    text: "مشهد، بزرگمهر جنوبی ۴، پلاک ۲۰",
+    href: undefined,
+  },
+  {
+    id: "tehran",
+    icon: "/images/address.png",
+    text: "تهران، تقاطع خاقانی و سمیه، ساختمان ۱۱ طبقه دانشگاه خوارزمی، طبقه ششم، مؤسسه دکتر مصاحب",
     href: undefined,
   },
   {
@@ -14,7 +26,7 @@ export const contactInfo = [
     href: "mailto:info@sciencinnov.com",
   },
   {
-    id: uuidv4(),
+    id: "phone",
     icon: "/images/tel.png",
     text: "۰۹۰۴۳۳۶۸۷۰۷",
     href: "tel:09043368707",

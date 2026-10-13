@@ -26,7 +26,10 @@ export function Carousel({ children, className }: CarouselProps) {
     setIndex((prev) => (prev - 1 + count) % count);
   };
 
-  const ordered = Array.from({ length: count }, (_, i) => items[(index + i) % count]);
+  const ordered = Array.from(
+    { length: count },
+    (_, i) => items[(index + i) % count],
+  );
 
   return (
     <div className="relative">
@@ -34,7 +37,7 @@ export function Carousel({ children, className }: CarouselProps) {
         type="button"
         onClick={prev}
         aria-label="موارد بعدی"
-        className="absolute top-1/2 -left-6 z-10 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full bg-brand-gray p-3 shadow-md ring-1 ring-black/5 transition-transform hover:scale-105 sm:flex"
+        className="absolute top-1/2 -left-13 z-10 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full bg-brand-gray p-3 shadow-md ring-1 ring-black/5 transition-transform hover:scale-105 sm:flex cursor-pointer"
       >
         <Image
           src="/images/arrow-right.png"
@@ -48,7 +51,7 @@ export function Carousel({ children, className }: CarouselProps) {
         type="button"
         onClick={next}
         aria-label="موارد قبلی"
-        className="absolute top-1/2 -right-6 z-10 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full bg-brand-gray p-3 shadow-md ring-1 ring-black/5 transition-transform hover:scale-105 sm:flex"
+        className="absolute top-1/2 -right-13 z-10 hidden size-14 -translate-y-1/2 items-center justify-center rounded-full bg-brand-gray p-3 shadow-md ring-1 ring-black/5 transition-transform hover:scale-105 sm:flex cursor-pointer"
       >
         <Image
           src="/images/arrow-right.png"
@@ -65,8 +68,10 @@ export function Carousel({ children, className }: CarouselProps) {
           className={cn(
             "flex gap-6 overflow-x-auto px-1 py-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden",
             "animate-in fade-in duration-700 ease-out",
-            direction === "next" ? "slide-in-from-right-6" : "slide-in-from-left-6",
-            className
+            direction === "next"
+              ? "slide-in-from-right-6"
+              : "slide-in-from-left-6",
+            className,
           )}
         >
           {ordered}
