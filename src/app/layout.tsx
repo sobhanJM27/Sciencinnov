@@ -5,7 +5,7 @@ import { Footer } from "@/components/ui/footer";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Sciencinnov",
+  title: "آکادمی مهارت‌ محور ساینسینو",
   description: "آکادمی آموزش مهارت‌ محور علوم و فناوری بر پایه متدهای نوین",
 };
 

@@ -1,12 +1,23 @@
 import { goals } from "@/items/goals";
 import Image from "next/image";
 import { Reveal } from "@/components/reveal";
-import { sectionPaddingX, sectionTitleOnDark } from "@/lib/style";
+import {
+  radius,
+  sectionMarginY,
+  sectionPaddingX,
+  sectionTitleOnDark,
+} from "@/lib/style";
 import { cn } from "cn";
 
 export function Goals() {
   return (
-    <section className="w-full bg-brand-blue-active rounded-[62px] my-10 md:my-16">
+    <section
+      className={cn(
+        "w-full bg-brand-blue-active",
+        sectionMarginY,
+        radius.sectionLarge,
+      )}
+    >
       <div
         className={cn(
           "grid grid-cols-1 gap-10 py-14 md:grid-cols-2 md:gap-x-10 md:py-16 lg:grid-cols-4 lg:gap-14 lg:py-20",

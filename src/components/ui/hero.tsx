@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Reveal, RevealSide } from "@/components/reveal";
 import { ConsultationPopup } from "../consultation-popup";
 import { cn } from "cn";
-import { sectionPaddingX, sectionPaddingY } from "@/lib/style";
+import { bodyText, sectionPaddingX, sectionPaddingY } from "@/lib/style";
 
 export function Hero() {
   return (
@@ -27,7 +27,7 @@ export function Hero() {
             </Reveal>
             <div className="flex flex-col gap-16">
               <Reveal delay={150}>
-                <p className="text-base leading-8 text-brand-black lg:text-lg font-medium">
+                <p className={bodyText}>
                   آکادمی آموزش مهارت‌محور علوم و فناوری بر پایه متدهای
                   <br />
                   نوین برای کودکان و نوجوانان.

@@ -9,7 +9,7 @@ export const navTabs = [
     {
         id: uuidv4(),
         title: "دوره ها",
-        href: "/courses",
+        href: "/#Our-Courses",
     },
     {
         id: uuidv4(),
@@ -20,5 +20,10 @@ export const navTabs = [
         id: uuidv4(),
         title: "تجربه",
         href: "/#experience",
+    },
+    {
+        id: uuidv4(),
+        title: "درباره ما",
+        href: "/about-us",
     },
 ]

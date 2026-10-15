@@ -12,7 +12,7 @@ import {
 
 export function OurCourses() {
   return (
-    <section className="w-full">
+    <section id="Our-Courses" className="w-full">
       <div
         className={cn(
           "mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16",

@@ -1,9 +1,13 @@
 import type { ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "cn";
+import { radius } from "@/lib/style";
 
 const inputVariants = cva(
-  "w-full rounded-[40px] border text-sm outline-none transition-colors duration-300 disabled:pointer-events-none disabled:opacity-50",
+  cn(
+    "w-full border text-sm outline-none transition-colors duration-300 disabled:pointer-events-none disabled:opacity-50",
+    radius.section,
+  ),
   {
     variants: {
       variant: {
@@ -16,7 +20,7 @@ const inputVariants = cva(
     defaultVariants: {
       variant: "onDark",
     },
-  }
+  },
 );
 
 export function Input({

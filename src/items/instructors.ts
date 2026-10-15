@@ -4,8 +4,17 @@ export const instructors = [
   {
     id: uuidv4(),
     name: "امیرحسین فروندی",
-    title: "مدرس ریاضی و برنامه‌نویسی",
+    title: "فارغ‌التحصیل کارشناسی ریاضیات و کاربردها از دانشگاه فردوسی مشهد",
+    subtitle:
+      "کارشناس تحقیق و توسعه و توسعه‌دهنده فعال در زمینه هوش مصنوعی و بینایی ماشین | مدرس ریاضی و برنامه‌نویسی با بیش از ۲ سال سابقه تدریس",
     image: "/images/instructor1.png",
+  },
+  {
+    id: uuidv4(),
+    name: "فاطمه بازگیر",
+    title: "فارغ‌التحصیل رشته ریاضیات و کاربردها از دانشگاه خوارزمی",
+    subtitle: "مدرس اسکرچ جونیور، اسکرچ و پایتون",
+    image: "/images/instructor3.png",
   },
   {
     id: uuidv4(),
@@ -13,12 +22,6 @@ export const instructors = [
     title: "دانشجوی مهندسی برق دانشگاه فردوسی مشهد",
     subtitle: "مهارت‌های تخصصی: برنامه‌نویسی MATLAB، Python و PLC",
     image: "/images/instructor2.png",
-  },
-  {
-    id: uuidv4(),
-    name: "فاطمه بازگیر",
-    title: "مدرس برنامه‌نویسی",
-    image: "/images/instructor3.png",
   },
   {
     id: uuidv4(),

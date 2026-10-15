@@ -1,3 +1,4 @@
+import { radius } from "@/lib/style";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "cn";
@@ -11,8 +12,8 @@ const buttonVariants = cva(
         outline: "text-brand-surface-dark",
       },
       size: {
-        default: "px-14 py-4 w-fit rounded-[40px]",
-        lg: "py-4 px-18 w-fit rounded-[33px]",
+        default: cn("px-14 py-4 w-fit", radius.section),
+        lg: cn("py-4 px-18 w-fit", radius.buttonLarge),
       },
     },
     defaultVariants: {

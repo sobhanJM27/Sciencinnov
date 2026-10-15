@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./public/images/sciencinnov_logo_white.png" alt="Sciencinnov logo" width="180" />
+<img src="./public/images/sciencinnov_logo.png" alt="Sciencinnov logo" width="180" />
 
 # Sciencinnov
 

@@ -6,7 +6,9 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
+function Sheet({
+  ...props
+}: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }
 
@@ -36,7 +38,10 @@ function SheetBackdrop({
     <SheetPrimitive.Backdrop
       data-slot="sheet-backdrop"
       className={cn(
-        "fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 ease-in-out data-ending-style:duration-500 data-ending-style:opacity-0 data-starting-style:opacity-0",
+        "fixed inset-0 z-50 bg-black/50",
+        "transition-opacity duration-300 ease-out",
+        "data-starting-style:opacity-0",
+        "data-ending-style:opacity-0",
         className,
       )}
       {...props}
@@ -55,24 +60,86 @@ function SheetContent({
   return (
     <SheetPortal>
       <SheetBackdrop />
+
       <SheetPrimitive.Popup
         data-slot="sheet-content"
         className={cn(
-          "bg-background fixed z-50 flex flex-col gap-4 shadow-lg transition-[transform,opacity] duration-300 ease-in-out data-ending-style:duration-500 data-ending-style:ease-in data-ending-style:opacity-0 data-starting-style:opacity-0",
+          // Base styles
+          "fixed z-50 flex flex-col gap-4",
+          "border-border bg-background shadow-2xl",
+
+          // Smooth movement animation
+          "will-change-transform",
+          "transition-transform duration-500",
+          "ease-[cubic-bezier(0.22,1,0.36,1)]",
+
+          // Closing animation
+          "data-ending-style:duration-300",
+          "data-ending-style:ease-in",
+
+          // Right
           side === "right" &&
-            "inset-y-0 right-0 h-full w-3/4 translate-x-0 border-l data-ending-style:translate-x-full data-starting-style:translate-x-full sm:max-w-sm",
+            [
+              "inset-y-0 right-0 h-full w-4/5 sm:max-w-sm",
+              "border-l",
+              "translate-x-0",
+              "data-starting-style:translate-x-full",
+              "data-ending-style:translate-x-full",
+            ].join(" "),
+
+          // Left
           side === "left" &&
-            "inset-y-0 left-0 h-full w-3/4 translate-x-0 border-r data-ending-style:-translate-x-full data-starting-style:-translate-x-full sm:max-w-sm",
+            [
+              "inset-y-0 left-0 h-full w-4/5 sm:max-w-sm",
+              "border-r",
+              "translate-x-0",
+              "data-starting-style:-translate-x-full",
+              "data-ending-style:-translate-x-full",
+            ].join(" "),
+
+          // Top
           side === "top" &&
-            "inset-x-0 top-0 h-auto translate-y-0 border-b data-ending-style:-translate-y-full data-starting-style:-translate-y-full",
+            [
+              "inset-x-0 top-0 h-auto w-full",
+              "border-b",
+              "translate-y-0",
+              "data-starting-style:-translate-y-full",
+              "data-ending-style:-translate-y-full",
+            ].join(" "),
+
+          // Bottom
           side === "bottom" &&
-            "inset-x-0 bottom-0 h-auto translate-y-0 border-t data-ending-style:translate-y-full data-starting-style:translate-y-full",
+            [
+              "inset-x-0 bottom-0 h-auto w-full",
+              "border-t",
+              "translate-y-0",
+              "data-starting-style:translate-y-full",
+              "data-ending-style:translate-y-full",
+            ].join(" "),
+
           className,
         )}
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="ring-offset-background focus:ring-ring absolute top-4 inset-s-4 rounded-xs opacity-80 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
+
+        {/* Default Close Button */}
+        <SheetPrimitive.Close
+          aria-label="بستن"
+          className={cn(
+            "absolute inset-s-4 top-4 z-10",
+            "flex size-10 items-center justify-center",
+            "rounded-xl border border-blue-100",
+            "bg-blue-50 text-blue-600 shadow-sm",
+            "transition-all duration-300",
+            "hover:rotate-90 hover:border-blue-200",
+            "hover:bg-blue-600 hover:text-white hover:shadow-md",
+            "active:scale-90",
+            "focus-visible:outline-none",
+            "focus-visible:ring-2 focus-visible:ring-blue-500",
+            "focus-visible:ring-offset-2",
+          )}
+        >
           <XIcon className="size-5" />
           <span className="sr-only">بستن</span>
         </SheetPrimitive.Close>
@@ -81,7 +148,10 @@ function SheetContent({
   );
 }
 
-function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
+function SheetHeader({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-header"

@@ -4,10 +4,11 @@ import { OurCourses } from "@/components/ui/our-courses";
 import { OurExperience } from "@/components/ui/our-experience";
 import { OurInstructors } from "@/components/ui/our-instructors";
 import { TrustedBy } from "@/components/ui/trusted-by";
+import { mainStyle } from "@/lib/style";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-2 items-center justify-center px-6 py">
+    <main className={mainStyle}>
       <Hero />
       <Goals />
       <OurCourses />
